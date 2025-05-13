@@ -90,8 +90,8 @@ jobs:
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           working-directory: web
-          json-summary-path: web/coverage/coverage-summary.json
-          json-final-path: web/coverage/coverage-final.json
+          json-summary-path: coverage/coverage-summary.json
+          json-final-path: coverage/coverage-final.json
 
         
 
