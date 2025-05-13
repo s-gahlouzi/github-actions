@@ -86,10 +86,12 @@ jobs:
         working-directory: web
       
       - name: 'Report Coverage'
-        # Set if: always() to also generate the report if tests are failing
-        # Only works if you set `reportOnFailure: true` in your vite config as specified above
         if: always() 
-        uses:  davelosert/vitest-coverage-report-action@v2
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          working-directory: web
+          json-summary-path: web/coverage/coverage-summary.json
+          json-final-path: web/coverage/coverage-final.json
 
         
 
