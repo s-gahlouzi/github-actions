@@ -53,4 +53,4 @@ jobs:
       - name: Add test results to PR
         uses: VeryGoodOpenSource/very_good_coverage@v2
         with:
-          path: "coverage/lcov.info"
+          path: "web/coverage/lcov.info"
