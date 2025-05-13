@@ -57,30 +57,35 @@ jobs:
         with:
           path: "web/coverage/lcov.info"
           min_coverage: 0
-      - name: Create Coverage Badges
-        uses: jaywcjlove/coverage-badges-cli@main
+      - name: ⚙️ Generating coverage badges
+        uses: jpb06/coverage-badges-action@latest
         with:
-          style: flat
-          source: web/coverage/coverage-summary.json
-          output: web/coverage/badges.svg
-          jsonPath: totals.percent_covered
+          branches: "*"
+          badges-icon: vitest
+      # - name: Create Coverage Badges
+      #   uses: jaywcjlove/coverage-badges-cli@main
+      #   with:
+      #     style: flat
+      #     source: web/coverage/coverage-summary.json
+      #     output: web/coverage/badges.svg
+      #     jsonPath: totals.percent_covered
 
-      - name: Upload Coverage Badge Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-badge
-          path: web/coverage/badges.svg
+      # - name: Upload Coverage Badge Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: coverage-badge
+      #     path: web/coverage/badges.svg
 
-      - name: Comment on PR with Artifact Note
-        uses: peter-evans/create-or-update-comment@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            ## 🧪 Test Coverage Badge
+      # - name: Comment on PR with Artifact Note
+      #   uses: peter-evans/create-or-update-comment@v3
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     issue-number: ${{ github.event.pull_request.number }}
+      #     body: |
+      #       ## 🧪 Test Coverage Badge
 
-            A coverage badge has been generated and is available in the workflow artifacts:
-            👉 [Download Coverage Badge from Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+      #       A coverage badge has been generated and is available in the workflow artifacts:
+      #       👉 [Download Coverage Badge from Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
-            You can preview the badge by downloading `badges.svg` from the **"Artifacts"** section of the workflow run.
-          edit-mode: replace
+      #       You can preview the badge by downloading `badges.svg` from the **"Artifacts"** section of the workflow run.
+      #     edit-mode: replace
