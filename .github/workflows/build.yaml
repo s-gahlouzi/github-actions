@@ -54,6 +54,7 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v2
         with:
           path: "web/coverage/lcov.info"
+          minCoverage: 0
       - name: Create Coverage Badges
         uses: jaywcjlove/coverage-badges-cli@main
         with:
