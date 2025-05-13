@@ -1,8 +1,8 @@
 name: Build and Test
 
-on:
-  pull_request:
-    branches: ['*']
+# on:
+#   pull_request:
+#     branches: ['*']
 
 jobs:
   build-web:
@@ -84,15 +84,11 @@ jobs:
       - name: Test
         run: pnpm test:coverage
         working-directory: web
-      
-      - name: 'Report Coverage'
-        if: always() 
+
+      - name: "Report Coverage"
+        if: always()
         uses: davelosert/vitest-coverage-report-action@v2
         with:
           working-directory: web
           json-summary-path: coverage/coverage-summary.json
           json-final-path: coverage/coverage-final.json
-
-        
-
-
