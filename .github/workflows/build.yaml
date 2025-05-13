@@ -54,3 +54,10 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v2
         with:
           path: "web/coverage/lcov.info"
+      - name: Create Coverage Badges
+        uses: jaywcjlove/coverage-badges-cli@main
+        with:
+          style: flat
+          source: web/coverage/coverage-summary.json
+          output: web/coverage/badges.svg
+          jsonPath: totals.percent_covered
