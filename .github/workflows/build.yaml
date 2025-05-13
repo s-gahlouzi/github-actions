@@ -60,7 +60,7 @@ jobs:
       - name: ⚙️ Generating coverage badges
         uses: jpb06/coverage-badges-action@latest
         with:
-          coverage-summary-path: coverage/coverage-summary.json
+          coverage-summary-path: web/coverage/coverage-summary.json
           badges-icon: vitest
           output-folder: coverage
           branches: "*"
