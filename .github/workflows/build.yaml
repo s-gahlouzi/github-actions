@@ -7,7 +7,7 @@ on:
     branches: ['*']
 
 jobs:
-  build:
+  build-web:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +35,9 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      - name: Navigate to web directory
+        run: cd web
 
       - name: Install dependencies
         run: pnpm install
