@@ -9,8 +9,10 @@ export default defineConfig({
 		reporters: ['default'],
 		coverage: {
 			provider: 'istanbul',
-			reporter: ['text', 'html', 'cobertura'],
+			reporter: ['text', 'json', 'json-summary'],
 			include: ['src/**/*.{ts,tsx}'],
+      // If you want a coverage reports even if your tests are failing, include the reportOnFailure option
+      reportOnFailure: true,
 		},
 		testTimeout: 60000,
 		watch: false,
