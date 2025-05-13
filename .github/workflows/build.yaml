@@ -63,6 +63,7 @@ jobs:
           coverage-summary-path: coverage/coverage-summary.json
           badges-icon: vitest
           output-folder: coverage
+          branches: "*"
       # - name: Create Coverage Badges
       #   uses: jaywcjlove/coverage-badges-cli@main
       #   with:
