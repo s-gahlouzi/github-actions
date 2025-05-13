@@ -60,12 +60,9 @@ jobs:
       - name: ⚙️ Generating coverage badges
         uses: jpb06/coverage-badges-action@latest
         with:
-          coverage-path: coverage/coverage-summary.json
+          coverage-summary-path: coverage/coverage-summary.json
           badges-icon: vitest
-          badges-style: flat
-          badges-color: green
-          badges-text: coverage
-          badges-path: coverage/badges.svg
+          output-folder: coverage
       # - name: Create Coverage Badges
       #   uses: jaywcjlove/coverage-badges-cli@main
       #   with:
