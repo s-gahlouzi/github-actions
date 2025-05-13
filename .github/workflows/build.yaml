@@ -61,7 +61,12 @@ jobs:
         uses: jpb06/coverage-badges-action@latest
         with:
           branches: "*"
+          coverage-path: web/coverage/coverage-summary.json
           badges-icon: vitest
+          badges-style: flat
+          badges-color: green
+          badges-text: coverage
+          badges-path: web/coverage/badges.svg
       # - name: Create Coverage Badges
       #   uses: jaywcjlove/coverage-badges-cli@main
       #   with:
