@@ -52,11 +52,11 @@ jobs:
       - name: Test Coverage
         run: pnpm test:coverage
 
-      # - name: Check Coverage
-      #   uses: VeryGoodOpenSource/very_good_coverage@v2
-      #   with:
-      #     path: "web/coverage/lcov.info"
-      #     min_coverage: 0
+      - name: Check Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v2
+        with:
+          path: "web/coverage/lcov.info"
+          min_coverage: 80
 
       # - name: "Report Coverage"
       #   if: always()
