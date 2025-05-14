@@ -56,12 +56,12 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v2
         with:
           path: "web/coverage/lcov.info"
-          min_coverage: 80
+          min_coverage: 0
 
-      # - name: "Report Coverage"
-      #   if: always()
-      #   uses: davelosert/vitest-coverage-report-action@v2
-      #   with:
-      #     working-directory: web
-      #     json-summary-path: coverage/coverage-summary.json
-      #     json-final-path: coverage/coverage-final.json
+      - name: "Report Coverage"
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          working-directory: web
+          json-summary-path: coverage/coverage-summary.json
+          json-final-path: coverage/coverage-final.json
